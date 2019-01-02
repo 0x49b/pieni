@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Pieni</title>
+
+    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/bstheme.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Hello, Pieni!</h1>
+        <p class="lead">An URL Shortener with a small footprint, written with node.js and redis.</p>
+        <hr class="my-4">
+        <div class="shortened"></div>
+        <form onsubmit="shorten(event)">
+            <div class="form-group row">
+                <label for="url" class="col-sm-2 col-form-label">Link</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="url" type="text" placeholder="Paste in the link" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="key" class="col-sm-2 col-form-label">Eigener Shortname</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="key" type="text" placeholder="A custom path? (optional)">
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Shorten</button>
+        </form>
+    </div>
+
+
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

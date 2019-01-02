@@ -1,0 +1,16 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "consolidate": "^0.15.1",
+    "express": "latest",
+    "mustache": "^3.0.1",
+    "redis": "^2.8.0"
+  }
+}
