@@ -59,6 +59,7 @@ app.get('/shorten', (req, res) => {
 
         } else {
             client.set(key, url, redis.print);
+            console.log('shortened ' + url + ' with ' + key);
         }
 
     });
@@ -69,9 +70,6 @@ app.get('/shorten', (req, res) => {
     });
 
 });
-
-
-
 
 
 // Redirect
