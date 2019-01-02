@@ -27,3 +27,22 @@ function generateKey(key) {
     }
     return key;
 }
+
+function printHead(){
+    console.log();
+    console.log();
+    console.log('      ::::::::: ::::::::::: :::::::::: ::::    ::: ::::::::::: ');
+    console.log('     :+:    :+:    :+:     :+:        :+:+:   :+:     :+:      ');
+    console.log('    +:+    +:+    +:+     +:+        :+:+:+  +:+     +:+       ');
+    console.log('   +#++:++#+     +#+     +#++:++#   +#+ +:+ +#+     +#+        ');
+    console.log('  +#+           +#+     +#+        +#+  +#+#+#     +#+         ');
+    console.log(' #+#           #+#     #+#        #+#   #+#+#     #+#          ');
+    console.log('###       ########### ########## ###    #### ###########       ');
+    console.log();
+    console.log('===============================================================');
+    console.log();
+    console.log('An URLShortener with a small footprint, with node.js and redis.');
+    console.log();
+    console.log('===============================================================');
+    console.log();
+}

@@ -9,13 +9,9 @@ const SERVERURL = process.env.SERVER_URL || 'localhost';
 const SERVERPORT = process.env.SERVER_PORT || 3000;
 const EXTPORT = process.env.SERVER_EXT || 3000;
 
-/*
-const REDISURL = process.env.REDIS_URL || 'localhost';
-const REDISPORT = process.env.REDIS_PORT || 6379;
-*/
 
 const REDISURL = process.env.REDIS_URL || 'localhost';
-const REDISPORT = process.env.REDIS_PORT || 32769;
+const REDISPORT = process.env.REDIS_PORT || 6379;
 
 
 app.use(express.static(path.join(__dirname, 'static')));
@@ -90,4 +86,22 @@ app.get('/:key', (req, res) => {
 });
 
 // Listener
+console.log();
+console.log();
+console.log('      ::::::::: ::::::::::: :::::::::: ::::    ::: ::::::::::: ');
+console.log('     :+:    :+:    :+:     :+:        :+:+:   :+:     :+:      ');
+console.log('    +:+    +:+    +:+     +:+        :+:+:+  +:+     +:+       ');
+console.log('   +#++:++#+     +#+     +#++:++#   +#+ +:+ +#+     +#+        ');
+console.log('  +#+           +#+     +#+        +#+  +#+#+#     +#+         ');
+console.log(' #+#           #+#     #+#        #+#   #+#+#     #+#          ');
+console.log('###       ########### ########## ###    #### ###########       ');
+console.log();
+console.log('===============================================================');
+console.log();
+console.log('An URLShortener with a small footprint, with node.js and redis.');
+console.log();
+console.log('===============================================================');
+console.log();
+
+
 app.listen(SERVERPORT, () => console.log(`server started on http://${SERVERURL}:${EXTPORT}`));
