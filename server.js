@@ -11,7 +11,7 @@ const EXTPORT = process.env.SERVER_EXT || 3000;
 
 
 const REDISURL = process.env.REDIS_URL || 'localhost';
-const REDISPORT = process.env.REDIS_PORT || 6379;
+const REDISPORT = process.env.REDIS_PORT || 32769;
 
 
 app.use(express.static(path.join(__dirname, 'static')));
@@ -25,7 +25,7 @@ let redis = require('redis');
 let client = redis.createClient(REDISPORT, REDISURL); // this creates a new client
 
 client.on('connect', function () {
-    console.log('Redis client connected on ' + REDISURL + ':' + REDISPORT);
+    console.log('Redis client connected to Redis Server on [' + REDISURL + ':' + REDISPORT + ']');
 });
 
 client.on('error', function (err) {
@@ -61,7 +61,7 @@ app.get('/shorten', (req, res) => {
     });
 
     res.json({
-        'href': 'http://' + SERVERURL + ':' + SERVERPORT + '/' + key,
+        'href': 'http://' + SERVERURL + ':' + EXTPORT + '/' + key,
         'display': 'http://' + SERVERURL + '/' + key
     });
 
@@ -85,23 +85,8 @@ app.get('/:key', (req, res) => {
     });
 });
 
+// print the application Head
+shortener.printHead();
+
 // Listener
-console.log();
-console.log();
-console.log('      ::::::::: ::::::::::: :::::::::: ::::    ::: ::::::::::: ');
-console.log('     :+:    :+:    :+:     :+:        :+:+:   :+:     :+:      ');
-console.log('    +:+    +:+    +:+     +:+        :+:+:+  +:+     +:+       ');
-console.log('   +#++:++#+     +#+     +#++:++#   +#+ +:+ +#+     +#+        ');
-console.log('  +#+           +#+     +#+        +#+  +#+#+#     +#+         ');
-console.log(' #+#           #+#     #+#        #+#   #+#+#     #+#          ');
-console.log('###       ########### ########## ###    #### ###########       ');
-console.log();
-console.log('===============================================================');
-console.log();
-console.log('An URLShortener with a small footprint, with node.js and redis.');
-console.log();
-console.log('===============================================================');
-console.log();
-
-
 app.listen(SERVERPORT, () => console.log(`server started on http://${SERVERURL}:${EXTPORT}`));
