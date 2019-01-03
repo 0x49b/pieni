@@ -1,48 +1,51 @@
-/**
- * Functions used by the URL Shortener
- */
+// shortener.js
+// ===============
+module.exports = {
+    /**
+     * Checks if the generated Key is already used
+     * @param key
+     */
+    checkExistingKey: function (key) {
+        client.exists(key, function (err, reply) {
+            if (reply === 1) {
+                return true;
+            }
+        });
+        return false
+    },
 
-
-/**
- * Checks if the generated Key is already used
- * @param url
- * @param key
- */
-function checkExistingKey(key) {
-    client.exists(key, function (err, reply) {
-        if (reply === 1) {
-            return true;
+    /**
+     * Generates a new Key or if it is set by the User returns the chosen
+     * @param key
+     */
+    generateKey: function (key = '') {
+        if (key === "") {
+            key = Math.random().toString(36).substr(2, 5);
         }
-    });
-    return false
-}
+        return key;
+    },
 
-/**
- * Generates a new Key or if it is set by the User returns the chosen
- * @param key
- */
-function generateKey(key) {
-    if (key === "") {
-        key = Math.random().toString(36).substr(2, 5);
+    /**
+     * Prints a fancy Header to the console on startup
+     */
+    printHead: function () {
+        console.log('                                                                   ');
+        console.log('                                                                   ');
+        console.log('        ::::::::: ::::::::::: :::::::::: ::::    ::: :::::::::::   ');
+        console.log('       :+:    :+:    :+:     :+:        :+:+:   :+:     :+:        ');
+        console.log('      +:+    +:+    +:+     +:+        :+:+:+  +:+     +:+         ');
+        console.log('     +#++:++#+     +#+     +#++:++#   +#+ +:+ +#+     +#+          ');
+        console.log('    +#+           +#+     +#+        +#+  +#+#+#     +#+           ');
+        console.log('   #+#           #+#     #+#        #+#   #+#+#     #+#            ');
+        console.log('  ###       ########### ########## ###    #### ###########         ');
+        console.log('                                                                   ');
+        console.log('  ===============================================================  ');
+        console.log('                                                                   ');
+        console.log('               An URLShortener with a small footprint.             ');
+        console.log('                   Made with ❤️, node.js and redis.                ');
+        console.log('                         by lichtwellenreiter.                     ');
+        console.log('                                                                   ');
+        console.log('  ===============================================================  ');
+        console.log('                                                                   ');
     }
-    return key;
-}
-
-function printHead(){
-    console.log();
-    console.log();
-    console.log('      ::::::::: ::::::::::: :::::::::: ::::    ::: ::::::::::: ');
-    console.log('     :+:    :+:    :+:     :+:        :+:+:   :+:     :+:      ');
-    console.log('    +:+    +:+    +:+     +:+        :+:+:+  +:+     +:+       ');
-    console.log('   +#++:++#+     +#+     +#++:++#   +#+ +:+ +#+     +#+        ');
-    console.log('  +#+           +#+     +#+        +#+  +#+#+#     +#+         ');
-    console.log(' #+#           #+#     #+#        #+#   #+#+#     #+#          ');
-    console.log('###       ########### ########## ###    #### ###########       ');
-    console.log();
-    console.log('===============================================================');
-    console.log();
-    console.log('An URLShortener with a small footprint, with node.js and redis.');
-    console.log();
-    console.log('===============================================================');
-    console.log();
-}
+};
