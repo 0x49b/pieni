@@ -19,6 +19,10 @@ function shorten(e) {
                 'Your shortened link <a href="' + response.href + '" target="_blank">' + response.display + '</a>' +
                 '<button class="btn btn-default" onclick="copyURL()"><i class="far fa-copy" id="copied"></i></button>' +
                 '</div> ';
+
+            // Empty InputFields
+            document.querySelector("#url").value = '';
+            document.querySelector("#key").value = '';
         });
 }
 
