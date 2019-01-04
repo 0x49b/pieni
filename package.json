@@ -1,16 +1,31 @@
 {
-  "name": "app",
+  "name": "Pieni",
   "version": "0.0.1",
-  "description": "",
+  "description": "Pieni is an URLShortener with a small footprint",
+  "keywords": [
+    "URLShortener",
+    "Pieni",
+    "redis"
+  ],
   "main": "server.js",
   "scripts": {},
-  "author": "",
+  "author": "Florian Thiévent <florian.thievent@sbb.ch>",
+  "contributors": "Florian Thiévent <florian.thievent@sbb.ch>",
   "license": "MIT",
+  "homepage": "https://github.com/lichtwellenreiter/pieni/blob/develop/readme.md",
+  "repository": "https://github.com/lichtwellenreiter/pieni.git",
+  "bugs": {
+    "url": "https://github.com/lichtwellenreiter/pieni/issues",
+    "email": "florian.thievent@sbb.ch"
+  },
   "dependencies": {
     "concurrently": "^4.1.0",
     "consolidate": "^0.15.1",
     "express": "latest",
     "mustache": "^3.0.1",
     "redis": "^2.8.0"
+  },
+  "engines": {
+    "npm": ">=5.6.0"
   }
 }
