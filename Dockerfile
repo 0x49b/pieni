@@ -1,7 +1,7 @@
 FROM node:carbon
 
 LABEL maintainer="florian.thievent@sbb.ch"
-LABEL version="0.0.1"
+LABEL version="0.0.7"
 LABEL description="Pieni is a POC of an URL Shortener"
 
 ARG port=3000
@@ -9,7 +9,7 @@ ARG port=3000
 ENV SERVER_URL s.bb
 ENV SERVER_PORT ${port}
 ENV SERVER_EXT 80
-ENV REDIS_URL redis
+ENV REDIS_URL "http://pieni-redis-u210645-pieni.app.ose.sbb-cloud.net"
 ENV REDIS_PORT 6379
 
 RUN npm install -g concurrently

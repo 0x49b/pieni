@@ -19,9 +19,11 @@
     "email": "florian.thievent@sbb.ch"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "consolidate": "^0.15.1",
     "express": "latest",
+    "morgan": "^1.9.1",
     "mustache": "^3.0.1",
     "redis": "^2.8.0"
   },

@@ -19,7 +19,7 @@ module.exports = {
      * @param key
      */
     generateKey: function (key = '') {
-        if (key === "") {
+        if (key === "" || key === undefined || key === null) {
             key = Math.random().toString(36).substr(2, 5);
         }
         return key;
