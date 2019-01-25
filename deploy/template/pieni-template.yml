@@ -14,6 +14,7 @@ objects:
     labels:
       app: pieni-poc-dev
       STAGE: dev
+      VERSION: ${PIENI_POC_VERSION}
     name: pieni-poc-dev
   spec:
     replicas: 1
