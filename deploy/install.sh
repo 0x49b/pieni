@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
 my_dir="$(dirname "$0")"
+PIENI_POC_VERSION=0.0.12
 
-if [ "_${PIENI_POC_VERSION}" = "_" ]; then
-    echo "Need to set version with export PIENI_POC_VERSION"
-    exit 1
-fi
-
-echo "Using Version ${PIENI_POC_VERSION}"
+echo "Using Version 0.0.12"
 
 
 #-- switch to pieni project
@@ -31,6 +27,8 @@ for template in ${templates[@]}; do
 
     #-- apply templates
     cat ./default/config.list | grep -Ew "$pat" | oc process -f ${template} --param-file=- | oc apply -f -
+
+
 
     #-- new line separator
     echo "";

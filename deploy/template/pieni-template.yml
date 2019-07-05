@@ -40,7 +40,7 @@ objects:
               - name: SERVER_URL
                 value: ${PIENI_URL}
               - name: REDIS_VERSION
-                value: ${PIENI_POC_VERSION}
+                value: "0.0.12"
               - name: SERVER_PORT
                 value: "3000"
               - name: SERVER_EXT
@@ -50,7 +50,7 @@ objects:
               - name: REDIS_PORT
                 value: "6379"
             image: >-
-              docker.bin.sbb.ch/pieni-poc/pieni-poc:${PIENI_POC_VERSION}
+              docker.bin.sbb.ch/pieni-poc/pieni-poc:"0.0.12"
             imagePullPolicy: IfNotPresent
             livenessProbe:
               failureThreshold: 5
