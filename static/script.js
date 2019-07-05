@@ -16,7 +16,7 @@ function shorten(e) {
             global_res = response;
             document.querySelector(".shortened").innerHTML = '' +
                 '<div class="alert alert-info mt-1 mb-4" role="alert"> ' +
-                'Your shortened link <a href="' + response.href + '" target="_blank">' + response.display + '</a>' +
+                'Deine neuer Link <a href="' + response.href + '" target="_blank">' + response.display + '</a>' +
                 '<button class="btn btn-default" onclick="copyURL()"><i class="far fa-copy" id="copied"></i></button>' +
                 '</div> ';
 

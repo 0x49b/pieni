@@ -13,8 +13,8 @@ objects:
     generation: 302
     labels:
       app: pieni-poc-dev
-      STAGE: dev
-      VERSION: ${PIENI_POC_VERSION}
+      stage: dev
+      version: ${PIENI_POC_VERSION}
     name: pieni-poc-dev
   spec:
     replicas: 1
@@ -40,7 +40,7 @@ objects:
                 value: "dev"
               - name: SERVER_URL
                 value: ${PIENI_URL}
-              - name: REDIS_VERSION
+              - name: PIENI_VERSION
                 value: ${PIENI_POC_VERSION}
               - name: SERVER_PORT
                 value: "3000"

@@ -13,6 +13,7 @@ const SERVERPORT = process.env.SERVER_PORT || 3000;
 const EXTPORT = process.env.SERVER_EXT || 3000;
 const REDISURL = process.env.REDIS_URL || 'localhost';
 const REDISPORT = process.env.REDIS_PORT || 32769;
+const PIENIVERSION = process.env.PIENI_VERSION || '0.0.0';
 
 // Configure the service
 app.use(express.static(path.join(__dirname, 'static')));
@@ -20,7 +21,7 @@ app.use(morgan('combined'));
 app.set('views', __dirname + '/static');
 app.engine('html', engines.mustache);
 app.set('view engine', 'html');
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
@@ -50,7 +51,7 @@ app.get('/', (req, res) => {
 app.get('/liveness', (req, res) => {
     res.json({
         "app": {
-            "version": "1.0.0",
+            "version": PIENIVERSION,
             "name": "Pieni",
             "description": "An URL Shortener with a small footprint, written with node.js and redis."
         }
@@ -101,15 +102,17 @@ app.post('/shorten', (req, res) => {
 });
 
 
-
 // Redirect
 app.get('/:key', (req, res) => {
     client.get(req.params.key, function (error, response) {
 
         if (error || response === null) {
-            console.log(error);
-            console.log('could not find ' + key + ' sending user to 404');
-            res.render('404', {url: req.url});
+
+            if (req.params.key !== 'favicon.ico') {
+                console.log(error);
+                console.log('could not find ' + req.params.key + ' sending user to 404');
+                res.render('404', {url: req.url});
+            }
         } else {
             res.redirect(response.toString());
             console.log('redirect ' + req.params.key + ' to ' + response.toString());
