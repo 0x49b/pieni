@@ -1,7 +1,7 @@
 FROM node:carbon
 
 LABEL maintainer="florian.thievent@sbb.ch"
-LABEL version="0.0.7"
+LABEL version="0.0.12"
 LABEL description="Pieni is a POC of an URL Shortener"
 
 ARG port=3000

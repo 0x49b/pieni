@@ -1,2 +1,6 @@
 STAGE=dev
+<<<<<<< HEAD
 PIENI_POC_VERSION=0.0.12
+=======
+PIENI_POC_VERSION=0.0.12
+>>>>>>> aaf827a9cde5cdde31772a57c2b9dbb171c4165f
