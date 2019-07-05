@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "_${PIENI_PROJECT}" = "_" ]; then
+if [[ "_${PIENI_PROJECT}" = "_" ]]; then
     echo "Need to set version with export PIENI_PROJECT"
     exit 1
 fi

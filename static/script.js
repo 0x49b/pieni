@@ -42,5 +42,4 @@ function copyURL() {
         document.getElementById('copied').classList.remove('fas', 'fa-check', 'text-success');
         document.getElementById('copied').classList.add('far', 'fa-copy');
     }, 2000);
-
 }

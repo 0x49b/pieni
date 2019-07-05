@@ -125,4 +125,4 @@ app.get('/:key', (req, res) => {
 shortener.printHead();
 
 // Listener
-app.listen(SERVERPORT, () => console.log(`server started on http://${SERVERURL}:${EXTPORT}`));
+app.listen(SERVERPORT, () => console.log(`server started on http://${SERVERURL}`));

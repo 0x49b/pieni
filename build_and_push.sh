@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-docker build #-t docker.bin.sbb.ch/pieni-poc/pieni:0.0.1
+docker build -t pieni-poc:latest
 #docker push docker.bin.sbb.ch/pieni-poc/pieni:0.0.1

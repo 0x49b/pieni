@@ -1,6 +1,0 @@
-// dataflow 1.2.0.RELEASE log opened at 2019-01-25 11:04:53
-dataflow config server --uri http://kib-plattform-dataflow-kib-int.app.ose.sbb-cloud.net --username admin --password admin
-task launch import-betriebspunkt --arguments "--kib.task.stammdaten.forceFullImport=true --kib.task.stammdaten.areacall.areaCallSkipLimit=100000 --kib.task.stammdaten.betriebspunkt.skipLimit=100000 --kib.task.stammdaten.gleis.gleisSkipLimit=100000 --kib.task.stammdaten.sektor.skipLimit=100000 --kib.task.stammdaten.sektor.gruppe.sektorGruppeSkipLimit=100000 --kib.task.stammdaten.wirkbereich.wirkbereichSkipLimit=100000"
-task launch import-betriebspunkt --arguments "--kib.task.stammdaten.forceFullImport=true --kib.task.stammdaten.areacall.areaCallSkipLimit=100000 --kib.task.stammdaten.betriebspunkt.skipLimit=100000 --kib.task.stammdaten.gleis.gleisSkipLimit=100000 --kib.task.stammdaten.sektor.skipLimit=100000 --kib.task.stammdaten.sektor.gruppe.sektorGruppeSkipLimit=100000 --kib.task.stammdaten.wirkbereich.wirkbereichSkipLimit=100000"
-exit
-// dataflow 1.2.0.RELEASE log closed at 2019-01-25 12:52:59

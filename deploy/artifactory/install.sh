@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "_${PIENI_PROJECT}" = "_" ]; then
+if [[ "_${PIENI_PROJECT}" = "_" ]]; then
     echo "Need to set version with export PIENI_PROJECT"
     exit 1
 fi
@@ -18,4 +18,4 @@ oc secrets new external-registry .dockerconfigjson=config.json
 # Secrets dem Default Service-Account zuweisen
 oc secrets add serviceaccount/default secrets/external-registry --for=pull
 
-unset IENI_PROJECT
+unset PIENI_PROJECT

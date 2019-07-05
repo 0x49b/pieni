@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 #-- Checks for Version ENV Var
-if [ "_${PIENI_POC_VERSION}" = "_" ]; then
+if [[ "_${PIENI_POC_VERSION}" = "_" ]]; then
     echo "Need to set version with export PIENI_POC_VERSION"
     exit 1
 fi
