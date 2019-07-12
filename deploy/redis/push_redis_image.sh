@@ -11,7 +11,7 @@ fi
 docker images
 
 #-- set the tag
-docker tag redis:latest pieni-poc.docker.bin.sbb.ch/pieni-poc/redis:${REDIS_VERSION}
+docker tag redis:latest pieni-poc.docker.bin.sbb.ch/pieni-poc/redis:0.0.20
 
 #-- list images again, just to be sure
 docker images
@@ -20,4 +20,4 @@ docker images
 docker login pieni-poc.docker.bin.sbb.ch
 
 #-- push the new image to artifactory
-docker push pieni-poc.docker.bin.sbb.ch/pieni-poc/redis:${REDIS_VERSION}
+docker push pieni-poc.docker.bin.sbb.ch/pieni-poc/redis:0.0.20

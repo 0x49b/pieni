@@ -21,12 +21,24 @@ fi
 
 echo "Using PIENI ${PIENI_POC_VERSION}, using REDIS ${REDIS_VERSION}"
 
-
 #-- switch to pieni project
 oc project ${PIENI_PROJECT}
 
 
 paramfile="./default/config.list"
+
+
+#-- Installing REDIS Service
+template="./template/redis-service.yml"
+echo "STAGE=dev" > ${paramfile}
+echo "PIENI_POC_VERSION=${PIENI_POC_VERSION}" >> ${paramfile}
+echo "Install Service: ${template}"
+
+#-- apply templates
+# cat ${paramfile} | grep -Ew "$pat" | oc process -f ${template} --param-file=${paramfile} | oc apply -f -
+oc apply -f ${template}
+#-- new line separator
+echo "";
 
 #-- Installing REDIS
 template="./template/redis-template.yml"
@@ -52,8 +64,6 @@ echo "Install Template: ${template}"
 oc process -f ${template} --param-file=${paramfile} | oc apply -f -
 #-- new line separator
 echo "";
-
-
 
 
 #-- remove PIENI_POC_VERSION from env
