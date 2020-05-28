@@ -77,8 +77,8 @@ objects:
               timeoutSeconds: 1
             resources:
               limits:
-                cpu: 4
-                memory: 8Gi
+                cpu: 2
+                memory: 4Gi
               requests:
                 cpu: 1
                 memory: 2Gi
@@ -150,7 +150,7 @@ parameters:
     required: true
   - name: OPENSHIFT_BASE_DOMAIN
     description: "The OpenShift address of the current cluster"
-    value: ose.sbb-cloud.net
+    value: test04.otc-test.sbb.ch
     required: false
   - name: IMAGESTREAM_NAMESPACE
     description: "Artifactory Project where are built the image streams"
@@ -158,5 +158,5 @@ parameters:
     required: true
   - name: REDIS_URL
     description: "URL for the Server and Route"
-    value: pieni-redis.app.ose.sbb-cloud.net
+    value: pieni-redis.app.test04.otc-test.sbb.ch
     required: true
