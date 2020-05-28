@@ -5,9 +5,9 @@ An URL Shortener with a small footprint, written with node.js and redis.
 
 ### Build and deploy
 
-PIENI_PROJECT - Name of the Openshift Project
-PIENI_POC_VERSION - Version of Pieni to be deployed
-REDIS_VERSION - Version of Redis to be deployed
+PIENI_PROJECT - Name of the Openshift Project  
+PIENI_POC_VERSION - Version of Pieni to be deployed  
+REDIS_VERSION - Version of Redis to be deployed  
 
 All Versions are stored in the SBB Artifactory (bin.sbb.ch).
 
